@@ -1,0 +1,71 @@
+name = "muhammed samet"
+surname = "bahceci"
+count = 0
+while True:
+    kname = input("Enter your name: ")
+    ksurname = input("Enter your surname: ")
+    kname = kname.lower()
+    ksurname = ksurname.lower()
+    if kname == name and ksurname == surname :
+        print("Welcome!")
+        break
+    elif kname != name or ksurname != surname:
+        print("Wrong name or surname ")
+        count+=1
+        if count == 3:
+            print("Please try again later!")
+            exit(0)
+def fail(number1): #başarısız durumlarda kullanılması için oluşturulmuş kod bloğu
+    if number1 == 3:
+        print("You failed in class!")
+        exit(0)
+
+
+lessons = ["Math", "Physics", "Computer Science", "Chemistry", "Economics"]
+
+print("Please choose one of the courses below. (min:3, max:5)")
+for course in lessons:
+    print(course)
+
+selectedcourses = []
+
+while True:
+    lnumber = int(input("How many courses will you take: "))
+    for i in range(lnumber):
+        selectedcourses.append(input("Enter the courses: "))
+        print("Course successfully added.")
+    def hmc(number2):
+        if number2 < 3:
+            return fail(3)
+        elif number2 > 5:
+            print("You can choose up to 5 courses!")
+            exit(0)
+    hmc(lnumber)
+    break      
+
+
+while(True): 
+    examcourse = input("Choose one of the courses you have to take exam. ")   
+    if examcourse in selectedcourses:
+            print("Course successfully selected.")
+            break
+    else:
+        print("Please enter a valid course.")
+
+midterm = int(input("Please enter your midterm score: "))
+final = int(input("Please enter your final score: "))
+project = int(input("Please enter your project score: "))
+total = (30*midterm/100) + (50*final/100) + (20*project/100)
+if total > 90 :
+    print("Your score: AA")
+elif 70<total<90 :
+    print("Your score: BB")
+elif 50<total<70 :
+    print("Your score: CC")
+elif 30<total<50 :
+    print("Your score: DD")
+elif total<30:
+    print("Your score: FF You failed the lesson!")
+
+
+    
